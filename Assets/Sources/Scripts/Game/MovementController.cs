@@ -9,6 +9,7 @@ public class MovementController : MonoBehaviour
 
     private float acceleration = 2;
     //private float thisVelocity = 10;
+    public float specialObjectAdditiveSpeed = 0;
     public float xCycleOffset = -16;
 
     private void Awake()
@@ -27,10 +28,10 @@ public class MovementController : MonoBehaviour
             thisTransform.localPosition = new Vector3(thisTransform.localPosition.x - xCycleOffset, 0, 0);
         }
 
-        float xPos = thisTransform.localPosition.x - (Constants.thisVelocity * Time.deltaTime);
+        float xPos = thisTransform.localPosition.x - ((Constants.thisVelocity+ specialObjectAdditiveSpeed) * Time.deltaTime);
         thisTransform.localPosition = new Vector3(xPos, thisTransform.localPosition.y, thisTransform.localPosition.z);
 
-        Debug.Log(Constants.thisVelocity);
+        //Debug.Log(Constants.thisVelocity);
     }
 
 

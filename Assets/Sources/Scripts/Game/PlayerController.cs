@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
             linePosition += 1;
         }
 
-        Vector3 targetPosition = new Vector3(-8, -1, 0);
+        Vector3 targetPosition = new Vector3(-8, -0.71f, 0);
         if (linePosition == -1)
         {
             targetPosition.y = 1.5f;

@@ -6,8 +6,9 @@ public class Data : MonoBehaviour
 {
     public static bool hasFirstStart;
 
-    public static string nickname;
-    public static string imei;
+    public static string nickname { get; private set; }
+    public static string imei { get; private set; }
+    public static int coinsCount { get; set; }
 
     public GameObject firstStartPanel;
     public GameObject mainMenuPanel;
@@ -36,6 +37,10 @@ public class Data : MonoBehaviour
         {
             imei = SystemInfo.deviceUniqueIdentifier;
             PlayerPrefs.SetString("imei", imei);
+        }
+        if (PlayerPrefs.HasKey("coinsCount")) 
+        {
+            coinsCount = PlayerPrefs.GetInt("coinsCount");
         }
 
         LoadMenu();
